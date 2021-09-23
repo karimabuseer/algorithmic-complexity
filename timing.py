@@ -16,3 +16,8 @@ element_numb = len(input_arr)
 with open('./data.csv', 'w') as f:
   writer = csv.writer(f)
   writer.writerow([time_elapsed, element_numb])
+
+# TODO: 
+# - Create better file structure (one file for algos, one for results)
+# - Let timing take command line argument of another file name which it then runs and times
+# - Create a function that returns an array of random length

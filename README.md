@@ -15,4 +15,5 @@ pytest
 ## Results
 ### Shuffle sort:
 Python's shuffle sort (from Python's random module) has a runtime of O(n), as can be seen from the following graph:
+
 ![built in shuffle](./shuffle_sort/built_in_time_graph.png)

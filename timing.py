@@ -4,7 +4,10 @@ import numpy
 import sys
 
 # Required array length is provided as a command line argument
-required_array_length = sys.argv[1]
+if __name__ == '__main__':
+  required_array_length = sys.argv[1]
+else:
+  required_array_length = 1
 
 
 # Create random array

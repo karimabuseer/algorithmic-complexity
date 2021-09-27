@@ -2,6 +2,7 @@ import time
 import csv
 import numpy
 import sys
+import random
 
 # Required array length is provided as a command line argument
 if __name__ == '__main__':
@@ -16,7 +17,7 @@ def create_random_array(required_array_length):
 
 # Function to test here:
 def function_to_test(array):
-  print(array)
+  random.shuffle(array)
 
 
 # Timing Framework
@@ -32,9 +33,10 @@ time_elapsed = return_function_runtime(required_array_length, function_to_test)
 print('Array length:',required_array_length,'Runtime:', time_elapsed )
 
 # Writes to spreadsheet
-with open('./data.csv', 'w') as f:
+with open('./shuffle_sort/data.csv', 'a') as f:
   writer = csv.writer(f)
   writer.writerow([time_elapsed, required_array_length])
+  f.close()
 
 # TODO: 
 # - Create better file structure (one file for algos, one for results)

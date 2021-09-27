@@ -1,21 +1,37 @@
 import time
 import csv
+import numpy
+import sys
 
-input_arr= []#input_array is created here
+# Required array length is provided as a command line argument
+required_array_length = sys.argv[1]
+
+
+# Create random array
+def create_random_array(required_array_length):
+  return numpy.random.randint(1,101,int(required_array_length))
+
+# Function to test here:
+def function_to_test(array):
+  print(array)
+
 
 # Timing Framework
-start = time.perf_counter()
-# Code goes here
-end = time.perf_counter()
+def return_function_runtime(required_array_length = required_array_length, function = function_to_test):
+  array = create_random_array(required_array_length)
+  start = time.perf_counter()
+  function(array)
+  end = time.perf_counter()
+  return end - start
 
 # Calculating Spreadsheet values
-time_elapsed = end - start
-element_numb = len(input_arr)
+time_elapsed = return_function_runtime(required_array_length, function_to_test)
+print('Array length:',required_array_length,'Runtime:', time_elapsed )
 
 # Writes to spreadsheet
 with open('./data.csv', 'w') as f:
   writer = csv.writer(f)
-  writer.writerow([time_elapsed, element_numb])
+  writer.writerow([time_elapsed, required_array_length])
 
 # TODO: 
 # - Create better file structure (one file for algos, one for results)

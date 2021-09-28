@@ -17,7 +17,7 @@ def create_random_array(required_array_length):
 
 # Function to test here:
 def function_to_test(array):
-  random.shuffle(array)
+  array.sort()
 
 
 # Timing Framework
@@ -33,7 +33,7 @@ time_elapsed = return_function_runtime(required_array_length, function_to_test)
 print('Array length:',required_array_length,'Runtime:', time_elapsed )
 
 # Writes to spreadsheet
-with open('./shuffle_sort/data.csv', 'a') as f:
+with open('./sort/data.csv', 'a') as f:
   writer = csv.writer(f)
   writer.writerow([time_elapsed, required_array_length])
   f.close()

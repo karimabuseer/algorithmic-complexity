@@ -17,7 +17,7 @@ def create_random_array(required_array_length):
 
 # Function to test here:
 def function_to_test(array):
-  
+  'foo'
 
 
 # Timing Framework

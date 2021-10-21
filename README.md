@@ -14,6 +14,7 @@ pytest
 
 ## Results
 ### Shuffle sort:
-Python's shuffle sort (from Python's random module) has a runtime of O(n), as can be seen from the following graph:
+- The requirement: An algorithm that takes the elements of an array and randomly orders them
+- Python's shuffle sort (from Python's random module) has a runtime of O(n), as can be seen from the following graph:
 
 ![built in shuffle](./shuffle/builtin_time_results.png)
